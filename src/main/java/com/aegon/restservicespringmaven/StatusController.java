@@ -9,12 +9,12 @@ import java.util.concurrent.atomic.AtomicLong;
 @RestController
 public class StatusController {
 
-    private static final String template = "Hello, %s!";
+    private static final String template = "Server Up, %s!";
     private final AtomicLong counter = new AtomicLong();
 
     // localhost:9091/greeting?name=Antonio --->
     @GetMapping("/status")
-    public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-        return new Greeting(counter.incrementAndGet(), String.format(template, name));
+    public Status status(@RequestParam(value = "name", defaultValue = "World") String name) {
+        return new Status(counter.incrementAndGet(), String.format(template, name));
     }
 }
