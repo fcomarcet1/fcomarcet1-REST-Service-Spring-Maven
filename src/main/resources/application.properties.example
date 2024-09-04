@@ -1,0 +1,17 @@
+spring.application.name=REST Service Spring Maven
+
+# Database config
+spring.datasource.url=${DB_URL}
+spring.datasource.username=${DB_USER}
+spring.datasource.password=${DB_PASSWORD}
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+# Luego, configura las variables de entorno en tu sistema o en tu plataforma de despliegue
+  export DB_URL=jdbc:postgresql://IP:5432/postgres_db_employees_rest_service
+  export DB_USER=admin
+  export DB_PASSWORD=admin
+
+# Configuration JPA/Hibernate
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
